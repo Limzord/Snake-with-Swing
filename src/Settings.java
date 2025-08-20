@@ -1,10 +1,10 @@
 import java.io.Serializable;
 
 public class Settings implements Serializable{
-    private double snakeMovementsPerSecond = 10.0;
-	private double frameRendersPerSecond = 60.0;
+    private double snakeMovementsPerSecond;
+	private double frameRendersPerSecond;
 
-	private boolean epilepsyMode = false;
+	private boolean epilepsyMode;
 
     public Settings() {
         this.initDefaultSettings();
