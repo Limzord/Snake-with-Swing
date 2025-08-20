@@ -29,9 +29,11 @@ public class Renderer extends JPanel {
 			for (int y = 0; y < 25; y++) {
 				switch (objPos[x][y]) {
 				case 0:
-					// g.setColor(new Color((int) (Math.random() * 255), (int) (Math.random() * 255),
-							// (int) (Math.random() * 255)));
-					g.setColor(new Color(0, 0, 0));
+					if (SnakeDriver.settings.isEpilepsyMode())
+						g.setColor(new Color((int) (Math.random() * 255), (int) (Math.random() * 255),
+								(int) (Math.random() * 255)));
+					else
+						g.setColor(new Color(0, 0, 0));
 					break;
 				case 1:
 					g.setColor(new Color(255, 0, 0));
