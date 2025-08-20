@@ -6,6 +6,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.awt.GraphicsEnvironment;
 
 public class Settings implements Serializable{
     private double snakeMovementsPerSecond;
@@ -19,7 +20,7 @@ public class Settings implements Serializable{
 
     private void initDefaultSettings() {
         snakeMovementsPerSecond = 10.0;
-        frameRendersPerSecond = 60.0;
+        frameRendersPerSecond = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0].getDisplayMode().getRefreshRate();
         epilepsyMode = false;
     }
 
