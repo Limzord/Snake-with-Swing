@@ -1,6 +1,8 @@
 // possible args:
 // -fr or --framerate to set rendering framerate
 // -lr or --logicrate to set logic calculation / snake movement rate
+// -ee or --epilepsyEnable to enable epilepsy mode
+// -ed or --epilepsyDisable to disable epilepsy mode
 //
 // controls:
 // arrow keys: movement
