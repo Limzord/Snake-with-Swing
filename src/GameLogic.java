@@ -14,7 +14,7 @@ public class GameLogic extends Thread {
 	@Override
 	public void run() {
 		while (SnakeDriver.running) {
-			if (TimeKeeping.calculateDeltaTime(previousCalcTime) > 1000.0 / SnakeDriver.snakeMovementsPerSecond && !SnakeDriver.paused) {
+			if (TimeKeeping.calculateDeltaTime(previousCalcTime) > 1000.0 / SnakeDriver.settings.getSnakeMovementsPerSecond() && !SnakeDriver.paused) {
 				previousCalcTime = System.currentTimeMillis();
 
 				snake.updateHeadPos();

@@ -14,13 +14,12 @@
 
 public class SnakeDriver {
 
-	// game settings
-	public static double snakeMovementsPerSecond = 10.0;
-	public static double frameRendersPerSecond = 60.0;
-
+	// paused and running state to be edited and read by other classes willy-nilly
 	public static boolean paused = false;
-
 	public static boolean running = true;
+
+	// game settings
+	public static Settings settings = new Settings();
 
 	public static void main(String[] args) {
 		

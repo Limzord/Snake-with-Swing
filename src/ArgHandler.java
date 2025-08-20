@@ -9,7 +9,7 @@ public class ArgHandler {
 				switch (args[i]) {
 				case "-lr":
 					try {
-						SnakeDriver.snakeMovementsPerSecond = Double.parseDouble(args[i + 1]);
+						SnakeDriver.settings.setSnakeMovementsPerSecond(Double.parseDouble(args[i + 1]));
 					} catch (ArrayIndexOutOfBoundsException e) {
 						System.out.println(e.getMessage());
 						System.out.println("Error: after argument, please input the value you want to set it to");
@@ -18,12 +18,18 @@ public class ArgHandler {
 					break;
 				case "-fr":
 					try {
-						SnakeDriver.frameRendersPerSecond = Double.parseDouble(args[i + 1]);
+						SnakeDriver.settings.setFrameRendersPerSecond(Double.parseDouble(args[i + 1]));
 					} catch (ArrayIndexOutOfBoundsException e) {
 						System.out.println(e.getMessage());
 						System.out.println("Error: after argument, please input the value you want to set it to");
 						System.out.println("continuing execution");
 					}
+					break;
+				case "-ee":
+					SnakeDriver.settings.setEpilepsyMode(true);
+					break;
+				case "-ed":
+					SnakeDriver.settings.setEpilepsyMode(false);
 					break;
 				}
 			}
@@ -32,7 +38,7 @@ public class ArgHandler {
 				switch (args[i]) {
 				case "--logicrate":
 					try {
-						SnakeDriver.snakeMovementsPerSecond = Double.parseDouble(args[i + 1]);
+						SnakeDriver.settings.setSnakeMovementsPerSecond(Double.parseDouble(args[i + 1]));
 					} catch (ArrayIndexOutOfBoundsException e) {
 						System.out.println(e.getMessage());
 						System.out.println("Error: after argument, please input the value you want to set it to");
@@ -41,12 +47,18 @@ public class ArgHandler {
 					break;
 				case "--framerate":
 					try {
-						SnakeDriver.frameRendersPerSecond = Double.parseDouble(args[i + 1]);
+						SnakeDriver.settings.setFrameRendersPerSecond(Double.parseDouble(args[i + 1]));
 					} catch (ArrayIndexOutOfBoundsException e) {
 						System.out.println(e.getMessage());
 						System.out.println("Error: after argument, please input the value you want to set it to");
 						System.out.println("continuing execution");
 					}
+					break;
+				case "--epilepsyEnable":
+					SnakeDriver.settings.setEpilepsyMode(true);
+					break;
+				case "-epilepsyDisable":
+					SnakeDriver.settings.setEpilepsyMode(false);
 					break;
 				}
 			}
