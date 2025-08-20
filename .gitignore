@@ -25,3 +25,7 @@ replay_pid*
 
 # VSCode settings
 .vscode/
+
+# save files
+settings.sav
+settings.sav.bak
