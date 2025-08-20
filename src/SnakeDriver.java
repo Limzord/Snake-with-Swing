@@ -14,6 +14,8 @@
 // but has a visible impact on lag when collecting pellets
 // (optimal framerate is screen's refresh rate)
 
+import java.io.IOException;
+
 public class SnakeDriver {
 
 	// paused and running state to be edited and read by other classes willy-nilly
@@ -21,11 +23,17 @@ public class SnakeDriver {
 	public static boolean running = true;
 
 	// game settings
-	public static Settings settings = new Settings();
+	public static Settings settings = Settings.load();
 
 	public static void main(String[] args) {
 		
 		ArgHandler.handleArgs(args);
+
+		try {
+			settings.save();
+		} catch (IOException e) {
+			System.out.println("unable to save game settings due to reason: " + e.getMessage());
+		}
 
 		GameLogic logic = new GameLogic();
 		VideoOutput video = new VideoOutput();
