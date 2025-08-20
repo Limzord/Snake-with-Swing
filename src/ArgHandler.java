@@ -9,7 +9,7 @@ public class ArgHandler {
 				switch (args[i]) {
 				case "-lr":
 					try {
-						Main.snakeMovementsPerSecond = Double.parseDouble(args[i + 1]);
+						SnakeDriver.snakeMovementsPerSecond = Double.parseDouble(args[i + 1]);
 					} catch (ArrayIndexOutOfBoundsException e) {
 						System.out.println(e.getMessage());
 						System.out.println("Error: after argument, please input the value you want to set it to");
@@ -18,7 +18,7 @@ public class ArgHandler {
 					break;
 				case "-fr":
 					try {
-						Main.frameRendersPerSecond = Double.parseDouble(args[i + 1]);
+						SnakeDriver.frameRendersPerSecond = Double.parseDouble(args[i + 1]);
 					} catch (ArrayIndexOutOfBoundsException e) {
 						System.out.println(e.getMessage());
 						System.out.println("Error: after argument, please input the value you want to set it to");
@@ -32,7 +32,7 @@ public class ArgHandler {
 				switch (args[i]) {
 				case "--logicrate":
 					try {
-						Main.snakeMovementsPerSecond = Double.parseDouble(args[i + 1]);
+						SnakeDriver.snakeMovementsPerSecond = Double.parseDouble(args[i + 1]);
 					} catch (ArrayIndexOutOfBoundsException e) {
 						System.out.println(e.getMessage());
 						System.out.println("Error: after argument, please input the value you want to set it to");
@@ -41,7 +41,7 @@ public class ArgHandler {
 					break;
 				case "--framerate":
 					try {
-						Main.frameRendersPerSecond = Double.parseDouble(args[i + 1]);
+						SnakeDriver.frameRendersPerSecond = Double.parseDouble(args[i + 1]);
 					} catch (ArrayIndexOutOfBoundsException e) {
 						System.out.println(e.getMessage());
 						System.out.println("Error: after argument, please input the value you want to set it to");

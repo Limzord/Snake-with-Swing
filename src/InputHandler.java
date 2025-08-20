@@ -65,10 +65,10 @@ public class InputHandler implements KeyListener {
 				}
 				break;
 			case KeyEvent.VK_ESCAPE:
-				Main.running = false;
+				SnakeDriver.running = false;
 				break;
 			case KeyEvent.VK_ENTER:
-				Main.paused = !Main.paused;
+				SnakeDriver.paused = !SnakeDriver.paused;
 				break;
 			}
 		} else {
@@ -90,10 +90,10 @@ public class InputHandler implements KeyListener {
 				inputBuffered = true;
 				break;
 			case KeyEvent.VK_ESCAPE:
-				Main.running = false;
+				SnakeDriver.running = false;
 				break;
 			case KeyEvent.VK_ENTER:
-				Main.paused = !Main.paused;
+				SnakeDriver.paused = !SnakeDriver.paused;
 				break;
 			}
 		}

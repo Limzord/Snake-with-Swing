@@ -13,8 +13,8 @@ public class GameLogic extends Thread {
 
 	@Override
 	public void run() {
-		while (Main.running) {
-			if (TimeKeeping.calculateDeltaTime(previousCalcTime) > 1000.0 / Main.snakeMovementsPerSecond && !Main.paused) {
+		while (SnakeDriver.running) {
+			if (TimeKeeping.calculateDeltaTime(previousCalcTime) > 1000.0 / SnakeDriver.snakeMovementsPerSecond && !SnakeDriver.paused) {
 				previousCalcTime = System.currentTimeMillis();
 
 				snake.updateHeadPos();
@@ -25,7 +25,7 @@ public class GameLogic extends Thread {
 					snake.updateTail();
 
 				if (intersects(snake))
-					Main.running = false;
+					SnakeDriver.running = false;
 
 				InputHandler.inputNotify();
 //			System.out.println(TimeKeeping.calculateDeltaTime(previousFrameTime));

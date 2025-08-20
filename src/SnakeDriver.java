@@ -12,7 +12,7 @@
 // but has a visible impact on lag when collecting pellets
 // (optimal framerate is screen's refresh rate)
 
-public class Main {
+public class SnakeDriver {
 
 	// game settings
 	public static double snakeMovementsPerSecond = 10.0;

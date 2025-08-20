@@ -17,8 +17,8 @@ public class VideoOutput extends Thread {
 
 	@Override
 	public void run() {
-		while (Main.running) {
-			if (TimeKeeping.calculateDeltaTime(previousFrameTime) > 1000.0 / Main.frameRendersPerSecond) {
+		while (SnakeDriver.running) {
+			if (TimeKeeping.calculateDeltaTime(previousFrameTime) > 1000.0 / SnakeDriver.frameRendersPerSecond) {
 				previousFrameTime = System.currentTimeMillis();
 				window.render(GameLogic.getSnake(), GameLogic.getPellet());
 			}

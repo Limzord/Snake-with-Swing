@@ -4,14 +4,14 @@ import javax.swing.*;
 public class Rendering extends JFrame {
 	private static final long serialVersionUID = 795051277355485771L;
 	Container c;
-	Zeichenbrett z;
+	Renderer r;
 	int[][] objPos = new int[25][25];
 
 	public Rendering() {
 
 		c = getContentPane();
-		z = new Zeichenbrett();
-		c.add(z);
+		r = new Renderer();
+		c.add(r);
 	}
 
 	public void render(Snake snake, Pellet pellet) {
@@ -21,7 +21,7 @@ public class Rendering extends JFrame {
 			if (tailPiece != null)
 				objPos[tailPiece.xPos][tailPiece.yPos] = 2;
 		objPos[pellet.getPos().xPos][pellet.getPos().yPos] = 1;
-		z.setObjectPos(objPos);
+		r.setObjectPos(objPos);
 		repaint();
 	}
 

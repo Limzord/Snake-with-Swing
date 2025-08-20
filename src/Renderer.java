@@ -1,11 +1,11 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class Zeichenbrett extends JPanel {
+public class Renderer extends JPanel {
 	private static final long serialVersionUID = -3607275009379437627L;
 	private int objPos[][] = new int[25][25];
 
-	Zeichenbrett() {
+	Renderer() {
 		addKeyListener(new InputHandler());
 	}
 
