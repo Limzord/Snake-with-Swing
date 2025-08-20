@@ -1,13 +1,13 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class Rendering extends JFrame {
+public class RenderingHelper extends JFrame {
 	private static final long serialVersionUID = 795051277355485771L;
 	Container c;
 	Renderer r;
 	int[][] objPos = new int[25][25];
 
-	public Rendering() {
+	public RenderingHelper() {
 
 		c = getContentPane();
 		r = new Renderer();

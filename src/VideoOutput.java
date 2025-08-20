@@ -4,11 +4,11 @@ import javax.swing.JFrame;
 
 public class VideoOutput extends Thread {
 
-	Rendering window;
+	RenderingHelper window;
 	private long previousFrameTime = System.currentTimeMillis();
 
 	VideoOutput() {
-		window = new Rendering();
+		window = new RenderingHelper();
 		window.setTitle("snek");
 		window.setSize(250, 250);
 		window.setVisible(true);
