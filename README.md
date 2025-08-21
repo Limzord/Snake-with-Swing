@@ -23,5 +23,3 @@ This GitHub project mainly exists so I have a reference when creating other Java
 		-lr [] / --logicrate [] to set the rate at which the game logic is calculated (also changes the snake's movement speed)
 		-ee / --epilepsyEnable to enable epilepsy mode
 		-ed / --epilepsyDisable to disable epilepsy mode
-
-testing main-test branch
