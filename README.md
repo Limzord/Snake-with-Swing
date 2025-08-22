@@ -10,13 +10,18 @@ This GitHub project mainly exists so I have a reference when creating other Java
 		escape key to quit the game
 		enter / return key to pause / unpause the game
 
+  	controls within pause menu:
+   		up/down arrow keys to change which option is selected
+		left/right arrow keys to change value of selected option
+
 	features:
-		arbitrary screen size with field size of 25 x 25
+		arbitrary window size with field size of 25 x 25
 		an input buffer is implemented to save one extra input if multiple keys are pressed at the same time
-		pausing is implemented with the input buffer responding while the game is paused
-		ability to change game logic speed and frame refresh rate separately through launch arguments
+		pausing is implemented with a settings menu
+		ability to change game logic speed and frame refresh rate separately through launch arguments or settings menu
 		automatic detection of main screen's frame refresh rate
-		save files to save settings applied through launch arguments and load them at startup
+		save files to save settings and load them at startup
+  		settings auto-save after closing game
 
 	launch arguments:
 		-fr [] / --framerate [] to set the frame refresh rate
