@@ -12,6 +12,9 @@ public class Settings implements Serializable{
     private double snakeMovementsPerSecond;
 	private double frameRendersPerSecond;
 
+    private int screenWidth;
+    private int screenHeight;
+
 	private boolean epilepsyMode;
 
     private Settings() {
@@ -22,6 +25,8 @@ public class Settings implements Serializable{
         snakeMovementsPerSecond = 10.0;
         frameRendersPerSecond = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0].getDisplayMode().getRefreshRate();
         epilepsyMode = false;
+        screenWidth = 600;
+        screenHeight = 600;
     }
 
     public double getSnakeMovementsPerSecond() {
@@ -46,6 +51,22 @@ public class Settings implements Serializable{
 
     public void setEpilepsyMode(boolean epilepsyMode) {
         this.epilepsyMode = epilepsyMode;
+    }
+    
+    public int getScreenWidth() {
+        return screenWidth;
+    }
+
+    public void setScreenWidth(int screenWidth) {
+        this.screenWidth = screenWidth;
+    }
+
+    public int getScreenHeight() {
+        return screenHeight;
+    }
+
+    public void setScreenHeight(int screenHeight) {
+        this.screenHeight = screenHeight;
     }
     
     public void save() throws IOException {
