@@ -37,64 +37,61 @@ public class InputHandler implements KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-
-		if (!inputSet) {
-			switch (e.getKeyCode()) {
-			case KeyEvent.VK_UP:
-				if (Snake.getFacingDirection() != Position.SOUTH) {
-					Snake.setFacingDirection(Position.NORTH);
-					inputSet = true;
-				}
-				break;
-			case KeyEvent.VK_RIGHT:
-				if (Snake.getFacingDirection() != Position.WEST) {
-					Snake.setFacingDirection(Position.EAST);
-					inputSet = true;
-				}
-				break;
-			case KeyEvent.VK_DOWN:
-				if (Snake.getFacingDirection() != Position.NORTH) {
-					Snake.setFacingDirection(Position.SOUTH);
-					inputSet = true;
-				}
-				break;
-			case KeyEvent.VK_LEFT:
-				if (Snake.getFacingDirection() != Position.EAST) {
-					Snake.setFacingDirection(Position.WEST);
-					inputSet = true;
-				}
-				break;
+		switch (e.getKeyCode()) {
 			case KeyEvent.VK_ESCAPE:
 				SnakeDriver.running = false;
 				break;
 			case KeyEvent.VK_ENTER:
 				SnakeDriver.paused = !SnakeDriver.paused;
 				break;
-			}
-		} else {
-			switch (e.getKeyCode()) {
-			case KeyEvent.VK_UP:
-				inputBuffer = KeyEvent.VK_UP;
-				inputBuffered = true;
-				break;
-			case KeyEvent.VK_RIGHT:
-				inputBuffer = KeyEvent.VK_RIGHT;
-				inputBuffered = true;
-				break;
-			case KeyEvent.VK_DOWN:
-				inputBuffer = KeyEvent.VK_DOWN;
-				inputBuffered = true;
-				break;
-			case KeyEvent.VK_LEFT:
-				inputBuffer = KeyEvent.VK_LEFT;
-				inputBuffered = true;
-				break;
-			case KeyEvent.VK_ESCAPE:
-				SnakeDriver.running = false;
-				break;
-			case KeyEvent.VK_ENTER:
-				SnakeDriver.paused = !SnakeDriver.paused;
-				break;
+		}
+		if (!SnakeDriver.paused) {
+			if (!inputSet) {
+				switch (e.getKeyCode()) {
+					case KeyEvent.VK_UP:
+						if (Snake.getFacingDirection() != Position.SOUTH) {
+							Snake.setFacingDirection(Position.NORTH);
+							inputSet = true;
+						}
+						break;
+					case KeyEvent.VK_RIGHT:
+						if (Snake.getFacingDirection() != Position.WEST) {
+							Snake.setFacingDirection(Position.EAST);
+							inputSet = true;
+						}
+						break;
+					case KeyEvent.VK_DOWN:
+						if (Snake.getFacingDirection() != Position.NORTH) {
+							Snake.setFacingDirection(Position.SOUTH);
+							inputSet = true;
+						}
+						break;
+					case KeyEvent.VK_LEFT:
+						if (Snake.getFacingDirection() != Position.EAST) {
+							Snake.setFacingDirection(Position.WEST);
+							inputSet = true;
+						}
+						break;
+				}
+			} else {
+				switch (e.getKeyCode()) {
+					case KeyEvent.VK_UP:
+						inputBuffer = KeyEvent.VK_UP;
+						inputBuffered = true;
+						break;
+					case KeyEvent.VK_RIGHT:
+						inputBuffer = KeyEvent.VK_RIGHT;
+						inputBuffered = true;
+						break;
+					case KeyEvent.VK_DOWN:
+						inputBuffer = KeyEvent.VK_DOWN;
+						inputBuffered = true;
+						break;
+					case KeyEvent.VK_LEFT:
+						inputBuffer = KeyEvent.VK_LEFT;
+						inputBuffered = true;
+						break;
+				}
 			}
 		}
 
