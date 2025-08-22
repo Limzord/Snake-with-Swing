@@ -25,7 +25,7 @@ public class SnakeDriver {
 	// game settings
 	public static Settings settings = Settings.load();
 	public static SettingsMenu settingsMenu = new SettingsMenu(settings);
-	public static DASHandler dasHandler = DASHandler.init(20);
+	public static DASHandler dasHandler = DASHandler.init(5);
 
 	public static void saveWithExceptionHandler() {
 		try {
