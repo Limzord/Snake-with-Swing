@@ -30,8 +30,10 @@ public class DASHandler implements Runnable {
     }
 
     public static DASHandler init(int dasTimeout) throws IllegalStateException{
-        if (dasHandler == null)
+        if (dasHandler == null) {
             dasHandler = new DASHandler(dasTimeout);
+            return dasHandler;
+        }
         throw new IllegalStateException("cannot initialize multiple objects of this class. please use getDasHandler().");
     }
 
