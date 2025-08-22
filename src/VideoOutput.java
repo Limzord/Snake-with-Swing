@@ -37,22 +37,22 @@ public class VideoOutput extends Thread {
 			}
 			
 			@Override
-			public void windowClosed(WindowEvent e) { throw new UnsupportedOperationException("Unimplemented method 'windowClosed'");  }
+			public void windowClosed(WindowEvent e) { }
 
 			@Override
-			public void windowOpened(WindowEvent e) { throw new UnsupportedOperationException("Unimplemented method 'windowOpened'"); }
+			public void windowOpened(WindowEvent e) { }
 
 			@Override
-			public void windowIconified(WindowEvent e) { throw new UnsupportedOperationException("Unimplemented method 'windowIconified'"); }
+			public void windowIconified(WindowEvent e) { }
 
 			@Override
-			public void windowDeiconified(WindowEvent e) { throw new UnsupportedOperationException("Unimplemented method 'windowDeiconified'"); }
+			public void windowDeiconified(WindowEvent e) { }
 
 			@Override
-			public void windowActivated(WindowEvent e) { throw new UnsupportedOperationException("Unimplemented method 'windowActivated'"); }
+			public void windowActivated(WindowEvent e) { }
 
 			@Override
-			public void windowDeactivated(WindowEvent e) { throw new UnsupportedOperationException("Unimplemented method 'windowDeactivated'"); }
+			public void windowDeactivated(WindowEvent e) { }
 			
 		});
 		while (SnakeDriver.running) {
