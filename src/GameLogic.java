@@ -1,4 +1,3 @@
-
 public class GameLogic extends Thread {
 
 	static Snake snake = null;
@@ -31,6 +30,7 @@ public class GameLogic extends Thread {
 //			System.out.println(TimeKeeping.calculateDeltaTime(previousFrameTime));
 			}
 		}
+		SnakeDriver.saveWithExceptionHandler();
 	}
 
 	public static boolean intersects(Snake snake) {
