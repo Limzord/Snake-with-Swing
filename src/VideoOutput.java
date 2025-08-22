@@ -59,6 +59,9 @@ public class VideoOutput extends Thread {
 			if (TimeKeeping.calculateDeltaTime(previousFrameTime) > 1000.0 / SnakeDriver.settings.getFrameRendersPerSecond()) {
 				previousFrameTime = System.currentTimeMillis();
 				window.render(GameLogic.getSnake(), GameLogic.getPellet());
+				if (SnakeDriver.paused) {
+					window.render(SnakeDriver.settingsMenu.getCurrentSetting());
+				}
 			}
 		}
 		window.dispatchEvent(new WindowEvent(window, WindowEvent.WINDOW_CLOSING));
