@@ -1,4 +1,8 @@
+import java.awt.Dimension;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 import javax.swing.JFrame;
 
@@ -13,7 +17,7 @@ public class VideoOutput extends Thread {
 		window.setSize(SnakeDriver.settings.getScreenWidth(), SnakeDriver.settings.getScreenHeight());
 		window.setVisible(true);
 		window.setMinimumSize(new Dimension(25,25));
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 	}
 
 	@Override
@@ -24,10 +28,40 @@ public class VideoOutput extends Thread {
 				SnakeDriver.settings.setScreenWidth(window.getWidth());
 			}
 		});
+		window.addWindowListener(new WindowListener() {
+
+			@Override
+			public void windowClosing(WindowEvent e) {
+				SnakeDriver.running = false;
+            	window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			}
+			
+			@Override
+			public void windowClosed(WindowEvent e) { }
+
+			@Override
+			public void windowOpened(WindowEvent e) { }
+
+			@Override
+			public void windowIconified(WindowEvent e) { }
+
+			@Override
+			public void windowDeiconified(WindowEvent e) { }
+
+			@Override
+			public void windowActivated(WindowEvent e) { }
+
+			@Override
+			public void windowDeactivated(WindowEvent e) { }
+			
+		});
 		while (SnakeDriver.running) {
 			if (TimeKeeping.calculateDeltaTime(previousFrameTime) > 1000.0 / SnakeDriver.settings.getFrameRendersPerSecond()) {
 				previousFrameTime = System.currentTimeMillis();
 				window.render(GameLogic.getSnake(), GameLogic.getPellet());
+				if (SnakeDriver.paused) {
+					window.render(SnakeDriver.settingsMenu.getCurrentSetting());
+				}
 			}
 		}
 		window.dispatchEvent(new WindowEvent(window, WindowEvent.WINDOW_CLOSING));

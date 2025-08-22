@@ -13,21 +13,22 @@ public class GameLogic extends Thread {
 	@Override
 	public void run() {
 		while (SnakeDriver.running) {
-			if (TimeKeeping.calculateDeltaTime(previousCalcTime) > 1000.0 / SnakeDriver.settings.getSnakeMovementsPerSecond() && !SnakeDriver.paused) {
+			if (TimeKeeping.calculateDeltaTime(previousCalcTime) > 1000.0 / SnakeDriver.settings.getSnakeMovementsPerSecond()) {
 				previousCalcTime = System.currentTimeMillis();
+				if (!SnakeDriver.paused) {
+					snake.updateHeadPos();
+					if (intersects(snake, pellet)) {
+						pellet = new Pellet();
+						snake.grow();
+					} else
+						snake.updateTail();
 
-				snake.updateHeadPos();
-				if (intersects(snake, pellet)) {
-					pellet = new Pellet();
-					snake.grow();
-				} else
-					snake.updateTail();
+					if (intersects(snake))
+						SnakeDriver.running = false;
 
-				if (intersects(snake))
-					SnakeDriver.running = false;
-
-				InputHandler.inputNotify();
-//			System.out.println(TimeKeeping.calculateDeltaTime(previousFrameTime));
+					InputHandler.inputNotify();
+				}
+				SnakeDriver.dasHandler.run();
 			}
 		}
 		SnakeDriver.saveWithExceptionHandler();
