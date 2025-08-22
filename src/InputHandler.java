@@ -96,16 +96,16 @@ public class InputHandler implements KeyListener {
 		} else {
 			switch (e.getKeyCode()) {
 				case KeyEvent.VK_UP:
-					SnakeDriver.settingsMenu.moveUp();
+					SnakeDriver.dasHandler.setMethod(DASHandler.DASDirection.DAS_UP);
 					break;
 				case KeyEvent.VK_RIGHT:
-					SnakeDriver.settingsMenu.moveRight();
+					SnakeDriver.dasHandler.setMethod(DASHandler.DASDirection.DAS_RIGHT);
 					break;
 				case KeyEvent.VK_DOWN:
-					SnakeDriver.settingsMenu.moveDown();
+					SnakeDriver.dasHandler.setMethod(DASHandler.DASDirection.DAS_DOWN);
 					break;
 				case KeyEvent.VK_LEFT:
-					SnakeDriver.settingsMenu.moveLeft();
+					SnakeDriver.dasHandler.setMethod(DASHandler.DASDirection.DAS_LEFT);
 					break;
 				case KeyEvent.VK_ENTER:
 					SnakeDriver.saveWithExceptionHandler();
@@ -115,7 +115,22 @@ public class InputHandler implements KeyListener {
 
 	}
 
-	public void keyReleased(KeyEvent e) {}
+	public void keyReleased(KeyEvent e) {
+		switch (e.getKeyCode()) {
+				case KeyEvent.VK_UP:
+					SnakeDriver.dasHandler.setMethod(null);
+					break;
+				case KeyEvent.VK_RIGHT:
+					SnakeDriver.dasHandler.setMethod(null);
+					break;
+				case KeyEvent.VK_DOWN:
+					SnakeDriver.dasHandler.setMethod(null);
+					break;
+				case KeyEvent.VK_LEFT:
+					SnakeDriver.dasHandler.setMethod(null);
+					break;
+			}
+	}
 	
 	public void keyTyped(KeyEvent e) {}
 
