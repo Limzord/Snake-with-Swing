@@ -9,6 +9,12 @@ import java.io.IOException;
 import java.awt.GraphicsEnvironment;
 
 public class Settings implements Serializable{
+    public enum PossibleSettings {
+        LOGIC_RATE,
+        FRAME_RATE,
+        EPILEPSY_MODE
+    };
+
     private double snakeMovementsPerSecond;
 	private double frameRendersPerSecond;
 
@@ -68,7 +74,7 @@ public class Settings implements Serializable{
     public void setScreenHeight(int screenHeight) {
         this.screenHeight = screenHeight;
     }
-    
+
     public void save() throws IOException {
         try {
             File file;

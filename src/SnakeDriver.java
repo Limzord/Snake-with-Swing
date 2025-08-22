@@ -24,6 +24,7 @@ public class SnakeDriver {
 
 	// game settings
 	public static Settings settings = Settings.load();
+	public static SettingsMenu settingsMenu = new SettingsMenu(settings);
 
 	public static void saveWithExceptionHandler() {
 		try {

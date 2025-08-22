@@ -93,6 +93,24 @@ public class InputHandler implements KeyListener {
 						break;
 				}
 			}
+		} else {
+			switch (e.getKeyCode()) {
+				case KeyEvent.VK_UP:
+					SnakeDriver.settingsMenu.moveUp();
+					break;
+				case KeyEvent.VK_RIGHT:
+					SnakeDriver.settingsMenu.moveRight();
+					break;
+				case KeyEvent.VK_DOWN:
+					SnakeDriver.settingsMenu.moveDown();
+					break;
+				case KeyEvent.VK_LEFT:
+					SnakeDriver.settingsMenu.moveLeft();
+					break;
+				case KeyEvent.VK_ENTER:
+					SnakeDriver.saveWithExceptionHandler();
+					break;
+			}
 		}
 
 	}
